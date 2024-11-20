@@ -1,8 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import './MainHeader/main-header.js';
 import './MainFooter/main-footer.js';
-
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
+import './LoginForm/login-form.js';
 
 class MainApp extends LitElement {
   static properties = {
@@ -23,6 +22,7 @@ class MainApp extends LitElement {
   render() {
     return html`
       <main-header></main-header>
+      <login-form></login-form>
       <main-footer></main-footer>
     `;
   }

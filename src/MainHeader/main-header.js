@@ -3,17 +3,21 @@ import { LitElement, html, css } from 'lit';
 class MainHeader extends LitElement {
   static styles = css`
     header {
-      background-color: #333;
-      color: white;
-      padding: 10px;
-      text-align: center;
+      background-color: white;
+      padding: 20px;
+      display: flex;
+    }
+
+    .header-logo{
+      width: 130px;
+      height: 40px;
     }
   `;
 
   render() {
     return html`
       <header>
-        <h1>Test Header</h1>
+        <img class='header-logo' src='../../assets/ing-logo.svg' alt='ing logo'/>
       </header>
     `;
   }
