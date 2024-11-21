@@ -12,7 +12,9 @@
     "test": "web-test-runner --coverage",
     "test:watch": "web-test-runner --watch",
     "analyze": "cem analyze --litelement",
-    "start": "web-dev-server"
+    "start": "web-dev-server",
+    "build": "rimraf dist && rollup -c rollup.config.js",
+    "start:build": "npm run build && es-dev-server --root-dir dist --app-index index.html --compatibility none --open"
   },
   "dependencies": {
     "@lion/form-core": "^0.18.3",
@@ -23,15 +25,20 @@
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.10.3",
+    "@open-wc/building-rollup": "^3.0.2",
     "@open-wc/eslint-config": "^12.0.3",
     "@open-wc/testing": "^4.0.0",
     "@web/dev-server": "^0.4.6",
     "@web/test-runner": "^0.18.2",
+    "deepmerge": "^4.3.1",
+    "es-dev-server": "^2.1.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
-    "prettier": "^3.3.2"
+    "prettier": "^3.3.2",
+    "rimraf": "^6.0.1",
+    "rollup": "^4.27.3"
   },
   "eslintConfig": {
     "extends": [
