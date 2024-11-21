@@ -16,7 +16,7 @@ export default merge(baseConfig, {
     // Add the copy plugin to copy assets from src/assets to dist/assets
     copy({
       targets: [
-        { src: 'src/assets/*', dest: 'dist/assets' }, // This copies all files in src/assets to dist/assets
+        { src: 'assets/*', dest: 'dist/assets' }, // This copies all files in src/assets to dist/assets
       ],
     }),
   ],
