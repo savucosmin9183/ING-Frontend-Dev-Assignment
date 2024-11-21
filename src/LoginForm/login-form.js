@@ -89,7 +89,7 @@ class LoginForm extends LitElement {
     return html`
       <lion-form @submit="${this._handleSubmit}">
         <form>
-          <p class="form-heading">Bine ai venit!</p>
+          <h2 class="form-heading">Bine ai venit!</h2>
           <my-input
             name="username"
             label="Username"
