@@ -1,3 +1,4 @@
+/* eslint-disable lit/attribute-value-entities */
 import { LitElement, html, css } from 'lit';
 
 class MainFooter extends LitElement {
@@ -15,6 +16,7 @@ class MainFooter extends LitElement {
 
     footer a {
         color: #333333;
+        text-decoration: none;
     }
 
     .mobile-badges{
@@ -40,6 +42,27 @@ class MainFooter extends LitElement {
         height: 40px;
     }
 
+    .desktop-badges{
+        display: none;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .desktop-badges .ios .badge {
+        background-image: url(https://www.homebank.ro/hb/hb/assets/images/1bc9e6e4a1e2a2b635c9.svg);
+        width: 116px;
+        height: 168px;
+        background-size: 100%;
+        margin-right: 150px;
+    }
+
+    .desktop-badges .android .badge {
+        background-image: url(https://www.homebank.ro/hb/hb/assets/images/ad8d99aca7ffd7008b58.svg);
+        width: 116px;
+        height: 168px;
+        background-size: 100%;
+    }
+
     .help-items{
         margin-top: 30px;
         margin-bottom: 80px;
@@ -56,12 +79,62 @@ class MainFooter extends LitElement {
         font-size: 12px;
         margin-bottom: 40px;
     }
+
+    @media (min-width: 576px) {
+        .mobile-badges {
+            display: none;
+        }
+
+        .desktop-badges{
+            display: flex;
+        }
+
+        .help-items{
+            flex-direction: row;
+            justify-content: center;
+            column-gap: 20px;
+        }
+
+        .help-items > * {
+            position: relative;
+        }
+
+        .help-items > *::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -10px;
+            height: 100%;
+            width: 1px;
+            background-color: #ccc;
+        }
+
+        .help-items > *:last-child::after {
+            display: none;
+        }
+
+        .help-items .item{
+            margin-bottom: 0px;
+        }
+    }
   `;
 
   render() {
     return html`
       <footer>
         <div class="mobile-badges">
+            <div class="ios">
+                <a target="_blank" href="https://itunes.apple.com/ro/app/ing-homebank/id458609168?mt=8&ls=1">
+                    <div class="badge"></div>
+                </a>
+            </div>
+            <div class="android">
+                <a target="_blank" href="https://play.google.com/store/apps/details?id=ro.ing.mobile.banking.android.activity&pli=1">
+                    <div class="badge"></div>
+                </a>
+            </div>
+        </div>
+        <div class="desktop-badges">
             <div class="ios">
                 <a target="_blank" href="https://itunes.apple.com/ro/app/ing-homebank/id458609168?mt=8&ls=1">
                     <div class="badge"></div>

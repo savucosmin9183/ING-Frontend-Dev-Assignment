@@ -9,7 +9,7 @@ class MainApp extends LitElement {
   static styles = css`
     :host {
       min-height: 100vh;
-      font-size: calc(10px + 1vmin);
+      font-size: 15px;
       color: #1a2b42;
       margin: 0 auto;
       text-align: center;

@@ -1,3 +1,5 @@
+/* eslint-disable wc/require-listener-teardown */
+/* eslint-disable class-methods-use-this */
 import { LitElement, html, css } from 'lit';
 import '../Components/my-button.js';
 import { Router } from '@vaadin/router';
