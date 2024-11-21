@@ -4,7 +4,7 @@ class UserDetails extends LitElement {
   static styles = css`
     :host {
       display: block;
-      padding: 16px;
+      padding: 20px;
       color: #333;
     }
   `;
@@ -16,8 +16,7 @@ class UserDetails extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    const queryParams = new URLSearchParams(window.location.search);
-    this.username = queryParams.get('username') || 'Guest';
+    this.username = localStorage.getItem('username');
   }
 
   render() {

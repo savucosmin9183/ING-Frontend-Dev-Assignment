@@ -44,6 +44,7 @@ class MainHeader extends LitElement {
   }
 
   _handleLogout() {
+    localStorage.removeItem('username');
     Router.go('/');
   }
 

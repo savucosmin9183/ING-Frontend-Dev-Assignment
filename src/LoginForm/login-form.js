@@ -1,3 +1,4 @@
+/* eslint-disable max-classes-per-file */
 import { html, css, LitElement } from 'lit';
 import '../Components/my-input.js';
 import '@lion/ui/define/lion-form.js';
@@ -56,6 +57,7 @@ class LoginForm extends LitElement {
     .form-heading{
         font-size: 20px;
         margin-bottom: 10px;
+        text-align: center;
     }
 
   `;
@@ -78,7 +80,8 @@ class LoginForm extends LitElement {
       formElement.submitted = true;
       console.log('Form validation failed.');
     } else {
-      Router.go(`/user-details?username=${encodeURIComponent(this.username)}`);
+      localStorage.setItem('username', this.username);
+      Router.go('/user-details');
     }
   }
 

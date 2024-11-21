@@ -12,7 +12,6 @@ class MainApp extends LitElement {
       font-size: 15px;
       color: #1a2b42;
       margin: 0 auto;
-      text-align: center;
     }
   `;
 
