@@ -1,13 +1,11 @@
 import { LitElement, html, css } from 'lit';
+import { Router } from '@vaadin/router';
 import './MainHeader/main-header.js';
 import './MainFooter/main-footer.js';
 import './LoginForm/login-form.js';
+import './UserDetails/user-details.js';
 
 class MainApp extends LitElement {
-  static properties = {
-    header: { type: String },
-  }
-
   static styles = css`
     :host {
       min-height: 100vh;
@@ -16,13 +14,22 @@ class MainApp extends LitElement {
       margin: 0 auto;
       text-align: center;
     }
-
   `;
+
+  firstUpdated() {
+    const outlet = this.shadowRoot.getElementById('outlet');
+    const router = new Router(outlet);
+
+    router.setRoutes([
+      { path: '/', component: 'login-form' },
+      { path: '/user-details', component: 'user-details' },
+    ]);
+  }
 
   render() {
     return html`
       <main-header></main-header>
-      <login-form></login-form>
+      <div id="outlet"></div>
       <main-footer></main-footer>
     `;
   }

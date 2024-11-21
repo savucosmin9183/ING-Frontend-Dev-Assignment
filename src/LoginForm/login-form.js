@@ -1,8 +1,8 @@
 import { html, css, LitElement } from 'lit';
 import '../Components/my-input.js';
-import '../Components/my-button.js';
 import '@lion/ui/define/lion-form.js';
 import { Required } from '@lion/ui/form-core.js';
+import { Router } from '@vaadin/router';
 
 class CustomRequired extends Required {
   static async getMessage({ fieldName }) {
@@ -78,9 +78,7 @@ class LoginForm extends LitElement {
       formElement.submitted = true;
       console.log('Form validation failed.');
     } else {
-      console.log('Form submitted successfully!');
-      console.log('Username:', this.username);
-      console.log('Password:', this.password);
+      Router.go(`/user-details?username=${encodeURIComponent(this.username)}`);
     }
   }
 

@@ -17,7 +17,7 @@ class MyButton extends LionButton {
           display: inline-block;
           cursor: pointer;
           border-radius: 8px;
-          font-size: 19px;
+          font-size: 15px;
           font-weight: 600;
           padding: 0;
         }
