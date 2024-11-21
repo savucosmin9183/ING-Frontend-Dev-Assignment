@@ -51,7 +51,7 @@ class MainHeader extends LitElement {
   render() {
     return html`
       <header>
-        <img class='header-logo' src='../../assets/ing-logo.svg' alt='ing logo'/>
+        <img class='header-logo' src="/assets/ing-logo.svg" alt='ing logo'/>
         ${this.currentPath === '/user-details'
           ? html`<my-button @click="${this._handleLogout}" class="logout-button">Logout</my-button>`
           : ''}
