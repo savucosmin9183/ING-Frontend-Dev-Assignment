@@ -8,10 +8,8 @@ class MainFooter extends LitElement {
       color: #333333;
       padding: 20px;
       text-align: center;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      position: relative;
+      margin-top: 50px;
     }
 
     footer a {
@@ -46,10 +44,6 @@ class MainFooter extends LitElement {
       display: none;
       width: 100%;
       justify-content: center;
-    }
-
-    .ios {
-      margin-right: 150px;
     }
 
     .desktop-badges .ios .badge {
@@ -92,6 +86,10 @@ class MainFooter extends LitElement {
         display: flex;
       }
 
+      .ios {
+        margin-right: 150px;
+      }
+
       .help-items {
         flex-direction: row;
         justify-content: center;
@@ -118,6 +116,13 @@ class MainFooter extends LitElement {
 
       .help-items .item {
         margin-bottom: 0px;
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
       }
     }
   `;
